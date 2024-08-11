@@ -1,0 +1,19 @@
+<mat-toolbar class=" text-white flex items-center">
+  <span class="text-xl font-bold">{{title}}</span>
+  <span class="flex-1"></span>
+  <div class="sm:hidden">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <nav class="hidden sm:flex flex-1 justify-end">
+    <ul class="flex space-x-4">
+      <li><a mat-button routerLink="/about" >Sobre Nós</a></li>
+      <li><a mat-button routerLink="/message" >Deixe uma Mensagem</a></li>
+    </ul>
+  </nav>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/about">Sobre Nós</button>
+    <button mat-menu-item routerLink="/message">Deixe uma Mensagem</button>
+  </mat-menu>
+</mat-toolbar>

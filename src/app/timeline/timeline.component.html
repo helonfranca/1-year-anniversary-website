@@ -1,26 +1,47 @@
-<div class="flex flex-col items-center  min-h-screen bg-gray-200 p-4">
-  <h1 class="text-4xl font-bold mb-8 text-gray-800">Contagem Regressiva</h1>
-  <div class="flex justify-center items-center text-4xl font-extrabold bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-transparent shadow-lg p-8 rounded-lg border border-yellow-400 w-full max-w-2xl">
-    <div class="flex items-center space-x-3">
+<div class="relative flex flex-col items-center min-h-screen p-4 pt-40 bg-gray-50 overflow-hidden">
+  <!-- Carrossel de Fundo -->
+  <div class="absolute inset-0 overflow-hidden z-0">
+    <div class="relative w-full h-full carousel-container">
+      <div class="carousel-item min-w-full flex-shrink-0 transition-transform duration-1000 ease-in-out">
+        <img src="/assets/img/background_hearts.jpg" alt="Foto 1" class="w-full h-full object-cover">
+      </div>
+      <div class="carousel-item min-w-full flex-shrink-0 transition-transform duration-1000 ease-in-out">
+        <img src="/assets/img/background_hearts.jpg" alt="Foto 2" class="w-full h-full object-cover">
+      </div>
+      <div class="carousel-item min-w-full flex-shrink-0 transition-transform duration-1000 ease-in-out">
+        <img src="/assets/img/background_hearts.jpg" alt="Foto 3" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay para melhorar legibilidade -->
+  <div class="absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent z-10"></div>
+
+  <!-- Conteúdo do Componente -->
+  <div class="relative z-10 mb-8 p-4 text-center animate-fadeIn text-principal rounded-lg ">
+    <h1 class="text-4xl font-bold text-gray-800">Contagem Regressiva para o Nosso Dia</h1>
+  </div>
+  <div class="relative z-10 flex justify-center items-center animate-fadeIn text-4xl font-extrabold text-transparent p-8 rounded-lg w-full max-w-4x2 ">
+    <div class="flex justify-center items-center w-full space-x-3">
       <!-- Caixa de Dias -->
-      <div class="flex flex-col items-center p-4 bg-white shadow-xl rounded-lg border border-yellow-300 w-24 h-24 flex-shrink-0">
-        <span class="block text-5xl font-semibold text-gray-900">{{ days }}</span>
-        <span class="block text-xl text-gray-700">d</span>
+      <div class="flex flex-col items-center p-4 animate-fadeIn bg-white shadow-xl rounded-lg border w-1/4 h-24">
+        <span class="text-5xl font-semibold text-gray-900">{{ days }}</span>
+        <span class="text-xl text-gray-700">dias</span>
       </div>
       <!-- Caixa de Horas -->
-      <div class="flex flex-col items-center p-4 bg-white shadow-xl rounded-lg border border-yellow-300 w-24 h-24 flex-shrink-0">
-        <span class="block text-5xl font-semibold text-gray-900">{{ hours }}</span>
-        <span class="block text-xl text-gray-700">h</span>
+      <div class="flex flex-col items-center animate-fadeIn p-4 bg-white shadow-xl rounded-lg border w-1/4 h-24">
+        <span class="text-5xl font-semibold text-gray-900">{{ hours }}</span>
+        <span class="text-xl text-gray-700">horas</span>
       </div>
       <!-- Caixa de Minutos -->
-      <div class="flex flex-col items-center p-4 bg-white shadow-xl rounded-lg border border-yellow-300 w-24 h-24 flex-shrink-0">
-        <span class="block text-5xl font-semibold text-gray-900">{{ minutes }}</span>
-        <span class="block text-xl text-gray-700">m</span>
+      <div class="flex flex-col items-center animate-fadeIn p-4 bg-white shadow-xl rounded-lg border w-1/4 h-24">
+        <span class="text-5xl font-semibold text-gray-900">{{ minutes }}</span>
+        <span class="text-xl text-gray-700">min</span>
       </div>
       <!-- Caixa de Segundos -->
-      <div class="flex flex-col items-center p-4 bg-white shadow-xl rounded-lg border border-yellow-300 w-24 h-24 flex-shrink-0">
-        <span class="block text-5xl font-semibold text-gray-900">{{ seconds }}</span>
-        <span class="block text-xl text-gray-700">s</span>
+      <div class="flex flex-col items-center animate-fadeIn p-4 bg-white shadow-xl rounded-lg border w-1/4 h-24">
+        <span class="text-5xl font-semibold text-gray-900">{{ seconds }}</span>
+        <span class="text-xl text-gray-700">seg</span>
       </div>
     </div>
   </div>

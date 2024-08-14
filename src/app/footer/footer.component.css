@@ -1,9 +1,4 @@
-.custom-toolbar {
-  background-color:#ffff00;
-  color: #000000;
-}
-
-.header{
+.footer{
   background: linear-gradient(to right, #facc15, #f59e0b, #d97706);
   /* Cor do texto */
   color: #111827;

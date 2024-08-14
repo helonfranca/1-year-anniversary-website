@@ -1,0 +1,59 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.carousel-container {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 1s ease-in-out;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+}
+
+/* Overlay para melhorar legibilidade */
+.bg-gradient-to-t {
+  background: linear-gradient(to top, rgba(31, 41, 55, 0.8) 0%, rgba(31, 41, 55, 0) 100%);
+}
+
+/* Animação de Fade-In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out;
+}
+
+/* Ajustes no título */
+.bg-clip-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.h-32 {
+  height: 8rem;
+}
+
+.text-principal{
+  background: linear-gradient(to right, #facc15, #f59e0b, #d97706);
+  color: #111827;
+}

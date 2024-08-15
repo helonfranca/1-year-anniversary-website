@@ -99,6 +99,6 @@ export class TimelineComponent implements OnInit, OnDestroy, AfterViewInit {
     // Auto slide every 5 seconds
     setInterval(() => {
       nextSlide();
-    }, 3000);
+    }, 5000);
   }
 }

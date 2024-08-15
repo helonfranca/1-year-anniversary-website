@@ -1,0 +1,26 @@
+<div class="flex flex-col items-center justify-center timeline pt-32">
+  <div class="relative z-10 mb-8 ml-5 mr-5 p-4 text-center animate-fadeIn text-principal rounded-lg ">
+    <h1 class="text-4xl font-bold text-gray-800">Linha do tempo dos Aniversários de Namoro</h1>
+  </div>
+  <div class="relative w-full max-w-xl">
+    <!-- Utilizando a nova sintaxe do Angular com @for -->
+    @for (month of months; track month.name) {
+      <div class="mr-5 ml-5 flex items-center timeline-item">
+        <div class="order-1 w-5/12 px-1 py-4">
+          <h2 class="mb-1 text-xl font-bold text-yellow-600">{{ month.name }} {{ month.year }}</h2>
+          <p class="text-sm leading-snug text-gray-800">{{ month.description }}</p>
+          <button
+            class="mt-2 px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-lg hover:bg-yellow-500"
+            (click)="openModal(month)">
+            Ver mais
+          </button>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="h-full w-1 bg-yellow-500 relative"></div>
+          <div class="absolute w-6 h-6 bg-yellow-500 rounded-full z-10"></div>
+        </div>
+        <div class="order-2 w-5/12"></div>
+      </div>
+    }
+  </div>
+</div>

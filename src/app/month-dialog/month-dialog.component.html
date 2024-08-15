@@ -1,0 +1,28 @@
+<div class="relative bg-white rounded-lg shadow-lg max-w-2xl mx-auto p-6">
+  <!-- Botão de fechar no canto superior direito -->
+  <button mat-button mat-dialog-close class="absolute top-3 right-3 text-gray-600 hover:text-gray-900">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+    </svg>
+  </button>
+
+  <h2 mat-dialog-title class="text-2xl font-semibold text-gray-900 mb-4">{{ data.name }} {{ data.year }}</h2>
+
+  <div mat-dialog-content>
+    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
+      <!-- Contêiner para a imagem -->
+      <div class="w-full md:w-1/2">
+        <div class="relative h-60 overflow-hidden rounded-lg">
+          <img [src]="data.image" alt="{{ data.alt }}" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      <!-- Contêiner para o texto -->
+      <div class="w-full md:w-1/2 md:pl-6 flex flex-col justify-between">
+        <p class="text-base text-gray-700 text-justify">{{
+          data.text
+        }}</p>
+      </div>
+    </div>
+  </div>
+</div>

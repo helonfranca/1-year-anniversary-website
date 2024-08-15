@@ -1,5 +1,7 @@
 <mat-toolbar class="header flex items-center fixed top-0 left-0 w-full z-50">
-  <span class="text-xl font-bold">{{title}}</span>
+  <a routerLink="/home">
+    <span class="text-xl font-bold">{{title}}</span>
+  </a>
   <span class="flex-1"></span>
   <div class="sm:hidden">
     <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -8,15 +10,17 @@
   </div>
   <nav class="hidden sm:flex flex-1 justify-end">
     <ul class="flex space-x-4">
-      <li><a mat-button (click)="scrollToSection('about-us')">Sobre Nós</a></li>
-      <li><a mat-button routerLink="/timeline">Linha do Tempo</a></li>
+      <li><a mat-button (click)="scrollToSection('about-us')"  routerLink="/home">Sobre Nós</a></li>
+      <li><a mat-button routerLink="/retrospective" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Linha do
+          Tempo</a></li>
       <li><a mat-button routerLink="/ourDay">Cronograma do Nosso Dia</a></li>
       <li><a mat-button routerLink="/memories">Álbum de Recordações</a></li>
     </ul>
   </nav>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="scrollToSection('about-us')">Sobre Nós</button>
-    <button mat-menu-item routerLink="/timeline">Linha do Tempo</button>
+    <button mat-menu-item (click)="scrollToSection('about-us')" routerLink="/home" routerLinkActive="activebutton">Sobre Nós</button>
+    <a><button mat-menu-item routerLink="/retrospective" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Linha do
+        Tempo</button></a>
     <button mat-menu-item routerLink="/ourDay">Cronograma do Nosso Dia</button>
     <button mat-menu-item routerLink="/memories">Álbum de Recordações</button>
   </mat-menu>

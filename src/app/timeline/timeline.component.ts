@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
@@ -8,7 +8,7 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrls: ['./timeline.component.css']
 })
 
-export class TimelineComponent implements OnInit, OnDestroy, AfterViewInit {
+export class TimelineComponent implements OnInit, OnDestroy {
   targetDate = new Date('2024-09-17T00:00:00');
   days: number = 0;
   hours: number = 0;
@@ -22,12 +22,6 @@ export class TimelineComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.updateTimer();
-    }
-  }
-
-  ngAfterViewInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.initializeCarousel();
     }
   }
 
@@ -66,39 +60,4 @@ export class TimelineComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
-  initializeCarousel() {
-    let currentSlide = 0;
-
-    function showSlide(index: number) {
-      const slides = document.querySelectorAll('.carousel-item');
-      const totalSlides = slides.length;
-
-      if (index >= totalSlides) {
-        currentSlide = 0;
-      } else if (index < 0) {
-        currentSlide = totalSlides - 1;
-      } else {
-        currentSlide = index;
-      }
-
-      const offset = -currentSlide * 100;
-      const carouselContainer = document.querySelector('.carousel-container') as HTMLElement;
-      if (carouselContainer) {
-        carouselContainer.style.transform = `translateX(${offset}%)`;
-      }
-    }
-
-    function nextSlide() {
-      showSlide(currentSlide + 1);
-    }
-
-    function prevSlide() {
-      showSlide(currentSlide - 1);
-    }
-
-    // Auto slide every 5 seconds
-    setInterval(() => {
-      nextSlide();
-    }, 5000);
-  }
 }

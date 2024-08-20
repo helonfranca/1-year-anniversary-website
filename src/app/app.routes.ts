@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { RetrospectiveComponent } from './retrospective/retrospective.component';
-import { HomeComponent } from './home/home.component';
-import { ScheduleComponent } from './schedule/schedule.component';
+import { RetrospectiveComponent } from './components/retrospective/retrospective.component';
+import { HomeComponent } from './components/home/home.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },

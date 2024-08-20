@@ -21,7 +21,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
     MatIconModule
   ],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'] // Corrigir para styleUrls
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
   title = '💛';

@@ -11,7 +11,7 @@ describe('ScheduleComponent', () => {
       imports: [ScheduleComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ScheduleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

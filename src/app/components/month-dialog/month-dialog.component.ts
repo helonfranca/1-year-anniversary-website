@@ -8,6 +8,7 @@ import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
     MatDialogModule,
   ],
   templateUrl: './month-dialog.component.html',
+  styleUrl: './month-dialog.component.css'
 })
 export class MonthDialogComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}

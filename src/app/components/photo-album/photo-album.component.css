@@ -1,0 +1,137 @@
+/* Gradient background and text color for the title section */
+.text-principal {
+  background: linear-gradient(to right, #facc15, #f1a521, #f39a00);
+  color: #111827;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Container for the memory cards */
+.album-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  perspective: 1000px;
+}
+
+/* Memory card styles */
+.memory-card {
+  position: relative;
+  width: 100%;
+  height: 20rem; /* Altura de 320px */
+  cursor: pointer;
+}
+
+/* Memory card inner (flip animation) */
+.memory-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  transition: transform 0.6s, box-shadow 0.3s;
+  transform-style: preserve-3d;
+}
+
+.memory-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back sides of the card */
+.memory-card-front,
+.memory-card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.memory-card-front {
+  background: linear-gradient(145deg, #fcd34d, #f1a521); /* Gradiente */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.memory-card-back {
+  background: linear-gradient(145deg, #1f2937, #4b5563); /* Gradiente */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+}
+
+/* Image styling on the front side */
+.memory-card-front img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.memory-card-front:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+
+/* Overlay text styling on hover */
+.overlay-text {
+  backdrop-filter: blur(5px); /* Desfoque do fundo */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(100%);
+}
+
+.memory-card:hover .overlay-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Button styling */
+.memory-card-button {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.memory-card-button:hover {
+  background-color: #f59e0b;
+  transform: scale(1.05);
+}
+
+/* Fade in animations */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-in-scale {
+  animation: fadeInScale 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}

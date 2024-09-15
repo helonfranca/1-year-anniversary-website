@@ -34,6 +34,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -53,7 +54,24 @@
   height: 8rem;
 }
 
-.text-principal{
+.text-principal {
   background: linear-gradient(to right, #facc15, #f1a521, #f39a00);
   color: #111827;
 }
+
+.confetti-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  /* A cor será substituída pelo `ngStyle` */
+}
+

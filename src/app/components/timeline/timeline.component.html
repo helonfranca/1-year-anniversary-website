@@ -15,7 +15,8 @@
   <div class="relative z-10 mb-8 p-4 text-center animate-fadeIn text-principal rounded-lg ">
     <h1 class="text-4xl font-bold text-gray-800">Contagem Regressiva para o Nosso Dia</h1>
   </div>
-  <div class="relative z-10 flex justify-center items-center animate-fadeIn text-4xl font-extrabold text-transparent p-8 rounded-lg w-full max-w-4x2 ">
+  <div
+    class="relative z-10 flex justify-center items-center animate-fadeIn text-4xl font-extrabold text-transparent p-8 rounded-lg w-full max-w-4x2 ">
     <div class="flex justify-center items-center w-full space-x-3">
       <!-- Caixa de Dias -->
       <div class="flex flex-col items-center p-4 animate-fadeIn  w-1/6 h-1/2">
@@ -39,4 +40,10 @@
       </div>
     </div>
   </div>
+
+  <!-- Confetes -->
+  <div *ngFor="let confetti of confettis" [@confettiAnimation] class="absolute" [style.left.px]="confetti.left"
+    [style.top.px]="confetti.top" [style.backgroundColor]="confetti.backgroundColor"
+    style="width:10px; height:10px; border-radius:50%;"></div>
+
 </div>

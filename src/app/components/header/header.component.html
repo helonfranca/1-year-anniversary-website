@@ -10,18 +10,25 @@
   </div>
   <nav class="hidden sm:flex flex-1 justify-end">
     <ul class="flex space-x-4">
-      <li><a mat-button (click)="scrollToSection('about-us')"  routerLink="/home">Sobre Nós</a></li>
-      <li><a mat-button routerLink="/retrospective" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Linha do
+      <li><a mat-button (click)="scrollToSection('about-us')" routerLink="/home">Sobre Nós</a></li>
+      <li><a mat-button routerLink="/retrospective" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Linha
+          do
           Tempo</a></li>
-      <li><a mat-button routerLink="/ourDay" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Programação do Nosso Dia</a></li>
-      <li><a mat-button routerLink="/memories">Álbum de Recordações</a></li>
+      <li><a mat-button routerLink="/ourDay" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Programação do
+          Nosso Dia</a></li>
+      <li><a mat-button routerLink="/memories" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Álbum de
+          Recordações</a></li>
     </ul>
   </nav>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="scrollToSection('about-us')" routerLink="/home" routerLinkActive="activebutton">Sobre Nós</button>
-    <a><button mat-menu-item routerLink="/retrospective" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Linha do
+    <button mat-menu-item (click)="scrollToSection('about-us')" routerLink="/home" routerLinkActive="activebutton">Sobre
+      Nós</button>
+    <a><button mat-menu-item routerLink="/retrospective" routerLinkActive="activebutton"
+        ariaCurrentWhenActive="page">Linha do
         Tempo</button></a>
-    <button mat-menu-item routerLink="/ourDay" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Programação do Nosso Dia</button>
-    <button mat-menu-item routerLink="/memories">Álbum de Recordações</button>
+    <button mat-menu-item routerLink="/ourDay" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Programação
+      do Nosso Dia</button>
+    <button mat-menu-item routerLink="/memories" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Álbum de
+      Recordações</button>
   </mat-menu>
 </mat-toolbar>

@@ -3,22 +3,22 @@
     <h1 class="text-4xl font-bold text-gray-800">Nosso Álbum de Recordações</h1>
   </div>
   <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-10">
-    @for(memory of memories; track memory.title){
+    @for(memory of memories; track memory.subtitle){
     <div class="memory-card fade-in-up" (click)="toggleFlip(memory)">
-      <div class="memory-card-inner relative w-full h-80 transition-transform duration-600 transform hover:scale-105" [ngClass]="{'is-flipped': memory.flipped}">
+      <div class="memory-card-inner relative w-full h-80 transition-transform duration-600 transform hover:scale-105"
+        [ngClass]="{'is-flipped': memory.flipped}">
         <!-- Front Side -->
         <div class="memory-card-front absolute inset-0 rounded-lg shadow-lg flex flex-col items-center justify-center">
-          <img [src]="memory.image" alt="{{ memory.title }}" class="w-3/4 h-40 object-cover rounded-lg mb-4">
-          <h2 class="text-2xl font-bold text-gray-800">{{ memory.title }}</h2>
-          <div class="overlay-text hidden">
-            <p class="text-lg">{{ memory.title }}</p>
-          </div>
+          <img [src]="memory.image" alt="{{ memory.subtitle }}" class="w-3/4 h-60 object-cover rounded-lg mb-4">
         </div>
         <!-- Back Side -->
-        <div class="memory-card-back absolute inset-0 rounded-lg shadow-lg flex flex-col items-center justify-center p-4 transform rotate-y-180">
+        <div
+          class="memory-card-back absolute inset-0 rounded-lg shadow-lg flex flex-col items-center justify-center p-4 transform rotate-y-180">
           <h3 class="text-xl font-semibold">{{ memory.subtitle }}</h3>
           <p class="text-sm mb-4">{{ memory.description }}</p>
-          <button class="mt-auto py-2 px-4 bg-yellow-600 rounded-lg uppercase font-semibold cursor-pointer memory-card-button">Ver mais</button>
+          <button
+            class="mt-auto py-2 px-4 bg-yellow-600 rounded-lg uppercase font-semibold cursor-pointer memory-card-button">Ver
+            mais</button>
         </div>
       </div>
     </div>
